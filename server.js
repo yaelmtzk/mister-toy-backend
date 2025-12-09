@@ -31,14 +31,17 @@ app.set('query parser', 'extended')
 // REST API for toys
 app.get('/api/toy', (req, res) => {
     console.log('/api/toy')
+    console.log(req.query);
+    
     const filterBy = {
         txt: req.query.txt || '',
-        maxPrice: +req.query.maxPrice || 0,
-        labels: req.query.labels,
-        sortBy: req.query.sortBy,
-        stock: req.query.stock,
-        pageIdx: req.query.pageIdx || undefined,
+        maxPrice: +req.query.maxPrice || '',
+        labels: req.query.labels || '',
+        sortBy: req.query.sortBy || '',
+        stock: req.query.stock || '',
+        pageIdx: req.query.pageIdx || '',
     }
+
     toyService.query(filterBy)
         .then(toys => res.send(toys))
         .catch(err => {

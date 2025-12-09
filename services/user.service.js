@@ -30,7 +30,7 @@ function getById(userId) {
         _id: user._id,
         username: user.username,
         fullname: user.fullname,
-        score: user.score
+        credits: user.credits
     }
 
     return Promise.resolve(user)
@@ -46,7 +46,7 @@ function save(user) {
     let userToUpdate = user
     if (user._id) {
         userToUpdate = users.find(_user => user._id === _user._id)
-        userToUpdate.score = user.score
+        userToUpdate.credits = user.credits
     } else {
         userToUpdate._id = utilService.makeId()
         users.push(userToUpdate)
@@ -54,7 +54,7 @@ function save(user) {
     const miniUser = {
         _id: userToUpdate._id,
         fullname: userToUpdate.fullname,
-        score: userToUpdate.score,
+        credits: userToUpdate.credits,
         isAdmin: user.isAdmin,
 
     }
@@ -70,7 +70,7 @@ function checkLogin({ username, password }) {
             _id: user._id,
             fullname: user.fullname,
             isAdmin: user.isAdmin,
-            score: user.score
+            credits: user.credits
         }
     }
     return Promise.resolve(user)

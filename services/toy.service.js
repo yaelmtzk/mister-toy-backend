@@ -11,47 +11,52 @@ export const toyService = {
 }
 
 const PAGE_SIZE = 3
-const toys = utilService.readJsonFile('data/toy.json')
+let toys = utilService.readJsonFile('data/toy.json')
+
+const gLabels = ['On wheels', 'Box game', 'Art', 'Baby', 'Doll',
+    'Puzzle', 'Outdoor', 'Battery Powered']
 
 function query(filterBy = {}) {
+    let filteredToys = [...toys]
+    
     let { txt, maxPrice, labels, sortBy, stock } = filterBy
-
+    
     if (txt) {
         const regex = new RegExp(txt, 'i')
-        toys = toys.filter((toy) => regex.test(toy.name))
+        filteredToys = filteredToys.filter((toy) => regex.test(toy.name))
     }
 
-    if (maxPrice) toys = toys.filter((toy) => toy.price <= maxPrice)
+    if (maxPrice) filteredToys = filteredToys.filter((toy) => toy.price <= maxPrice)
 
     if (labels) {
         const labelToFilter = labels
-        toys = toys.filter((toy) =>
+        filteredToys = filteredToys.filter((toy) =>
             toy.labels.some((label) =>
                 label.includes(labelToFilter))
         )
     }
 
     if (sortBy) {
-        if (sortBy === 'txt') toys = toys.sort((a, b) => a.name.localeCompare(b.name))
+        if (sortBy === 'txt') filteredToys = filteredToys.sort((a, b) => a.name.localeCompare(b.name))
 
-        else if (sortBy === 'price') toys = toys.sort((a, b) => a.price - b.price)
+        else if (sortBy === 'price') filteredToys = filteredToys.sort((a, b) => a.price - b.price)
 
-        else if (sortBy === 'created') toys = toys.sort((a, b) => a.createdAt - b.createdAt)
+        else if (sortBy === 'created') filteredToys = filteredToys.sort((a, b) => a.createdAt - b.createdAt)
 
-        // if (sortDir === -1) filtered.reverse()
+        // if (sortDir === -1) filteredToys.reverse()
     }
 
     if (stock) {
-        if (stock === 'true') toys = toys.filter((toy) => toy.inStock === true)
-        if (stock === 'false') toys = toys.filter((toy) => toy.inStock === false)
+        if (stock === 'true') filteredToys = filteredToys.filter((toy) => toy.inStock === true)
+        if (stock === 'false') filteredToys = filteredToys.filter((toy) => toy.inStock === false)
     }
 
-    if (filterBy.pageIdx !== undefined) {
-        const startIdx = filterBy.pageIdx * PAGE_SIZE
-        toysToReturn = toysToReturn.slice(startIdx, startIdx + PAGE_SIZE)
-    }
+    // if (filterBy.pageIdx !== undefined) {
+    //     const startIdx = filterBy.pageIdx * PAGE_SIZE
+    //     filteredToys = filteredToys.slice(startIdx, startIdx + PAGE_SIZE)
+    // }
 
-    return Promise.resolve(toys)
+    return Promise.resolve(filteredToys)
 }
 
 function getById(toyId) {
@@ -64,8 +69,9 @@ function remove(toyId, loggedinUser) {
     if (idx === -1) return Promise.reject('No Such toy')
 
     const toy = toys[idx]
+    
     if (!loggedinUser.isAdmin &&
-        toy.owner._id !== loggedinUser._id) {
+        toy.creator._id !== loggedinUser._id) {
         return Promise.reject('Not your toy')
     }
     toys.splice(idx, 1)
@@ -82,18 +88,19 @@ function save(toy, loggedinUser) {
         toyToUpdate.name = toy.name
         toyToUpdate.price = toy.price
         toy = toyToUpdate
+
     } else {
         toy._id = utilService.makeId()
-        // toy.creator = loggedinUser
-        const labels = ['On wheels', 'Box game', 'Art', 'Baby', 'Doll',
-            'Puzzle', 'Outdoor', 'Battery Powered']
-        toy.labels = _getRandLabels(toy.name, labels)
+        toy.creator = loggedinUser
+        toy.imgUrl = 'hardcoded-url-for-now'
+        toy.inStock = true
+        toy.createdAt = Date.now()
+        toy.labels = _getRandLabels(toy.name, gLabels)
         toys.push(toy)
     }
     // delete toy.creator.credits
     return _saveToysToFile().then(() => toy)
 }
-
 
 function _saveToysToFile() {
     return new Promise((resolve, reject) => {
@@ -106,4 +113,18 @@ function _saveToysToFile() {
             resolve()
         })
     })
+}
+
+function _getRandLabels(name, labels) {
+  const res = new Set()
+  const match = labels.find(lbl =>
+    lbl.toLowerCase().includes(name.toLowerCase())
+  )
+  if (match) res.add(match)
+
+  while (res.size < 3) {
+    const randomLabel = labels[utilService.getRandomIntInclusive(0, labels.length - 1)]
+    res.add(randomLabel)
+  }
+  return [...res]
 }
