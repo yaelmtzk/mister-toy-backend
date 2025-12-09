@@ -1,0 +1,182 @@
+[
+  {
+    "_id": "t101",
+    "name": "Talking Doll",
+    "imgUrl": "hardcoded-url-for-now",
+    "price": 123,
+    "labels": ["Doll", "Battery Powered", "Baby"],
+    "createdAt": 1631031801011,
+    "inStock": true
+  },
+  {
+    "_id": "t102",
+    "name": "Wooden Puzzle Board",
+    "imgUrl": "hardcoded-url-for-now",
+    "price": 45,
+    "labels": ["Puzzle", "Art", "Box game"],
+    "createdAt": 1631032801011,
+    "inStock": true
+  },
+  {
+    "_id": "t103",
+    "name": "Racing Car",
+    "imgUrl": "hardcoded-url-for-now",
+    "price": 89,
+    "labels": ["On wheels", "Outdoor", "Battery Powered"],
+    "createdAt": 1631033801011,
+    "inStock": false
+  },
+  {
+    "_id": "t104",
+    "name": "Baby Rattle",
+    "imgUrl": "hardcoded-url-for-now",
+    "price": 25,
+    "labels": ["Baby", "Art", "Doll"],
+    "createdAt": 1631034801011,
+    "inStock": true
+  },
+  {
+    "_id": "t105",
+    "name": "Garden Play Set",
+    "imgUrl": "hardcoded-url-for-now",
+    "price": 150,
+    "labels": ["Outdoor", "Box game", "Baby"],
+    "createdAt": 1631035801011,
+    "inStock": true
+  },
+  {
+    "_id": "t106",
+    "name": "Electric Train",
+    "imgUrl": "hardcoded-url-for-now",
+    "price": 199,
+    "labels": ["On wheels", "Battery Powered", "Puzzle"],
+    "createdAt": 1631036801011,
+    "inStock": false
+  },
+  {
+    "_id": "t107",
+    "name": "Creative Art Kit",
+    "imgUrl": "hardcoded-url-for-now",
+    "price": 60,
+    "labels": ["Art", "Box game", "Puzzle"],
+    "createdAt": 1631037801011,
+    "inStock": true
+  },
+  {
+    "_id": "t108",
+    "name": "Outdoor Ball Set",
+    "imgUrl": "hardcoded-url-for-now",
+    "price": 55,
+    "labels": ["Outdoor", "Baby", "Box game"],
+    "createdAt": 1631038801011,
+    "inStock": true
+  },
+  {
+    "_id": "t109",
+    "name": "Battery Robot",
+    "imgUrl": "hardcoded-url-for-now",
+    "price": 135,
+    "labels": ["Battery Powered", "Puzzle", "On wheels"],
+    "createdAt": 1631039801011,
+    "inStock": true
+  },
+  {
+    "_id": "t110",
+    "name": "Plush Doll",
+    "imgUrl": "hardcoded-url-for-now",
+    "price": 70,
+    "labels": ["Doll", "Baby", "Art"],
+    "createdAt": 1631040801011,
+    "inStock": false
+  },
+  {
+    "_id": "t111",
+    "name": "Outdoor Explorer Kit",
+    "imgUrl": "hardcoded-url-for-now",
+    "price": 90,
+    "labels": ["Outdoor", "Puzzle", "Box game"],
+    "createdAt": 1631041801011,
+    "inStock": true
+  },
+  {
+    "_id": "t112",
+    "name": "Coloring Station",
+    "imgUrl": "hardcoded-url-for-now",
+    "price": 35,
+    "labels": ["Art", "Baby", "Box game"],
+    "createdAt": 1631042801011,
+    "inStock": true
+  },
+  {
+    "_id": "t113",
+    "name": "Battery Helicopter",
+    "imgUrl": "hardcoded-url-for-now",
+    "price": 160,
+    "labels": ["Battery Powered", "On wheels", "Outdoor"],
+    "createdAt": 1631043801011,
+    "inStock": false
+  },
+  {
+    "_id": "t114",
+    "name": "Doll House",
+    "imgUrl": "hardcoded-url-for-now",
+    "price": 220,
+    "labels": ["Doll", "Box game", "Art"],
+    "createdAt": 1631044801011,
+    "inStock": true
+  },
+  {
+    "_id": "t115",
+    "name": "Baby Soft Blocks",
+    "imgUrl": "hardcoded-url-for-now",
+    "price": 40,
+    "labels": ["Baby", "Puzzle", "Art"],
+    "createdAt": 1631045801011,
+    "inStock": true
+  },
+  {
+    "_id": "t116",
+    "name": "Super Fast Kart",
+    "imgUrl": "hardcoded-url-for-now",
+    "price": 180,
+    "labels": ["On wheels", "Battery Powered", "Outdoor"],
+    "createdAt": 1631046801011,
+    "inStock": false
+  },
+  {
+    "_id": "t117",
+    "name": "Puzzle Cube",
+    "imgUrl": "hardcoded-url-for-now",
+    "price": 30,
+    "labels": ["Puzzle", "Box game", "Art"],
+    "createdAt": 1631047801011,
+    "inStock": true
+  },
+  {
+    "_id": "t118",
+    "name": "Outdoor Chalk Set",
+    "imgUrl": "hardcoded-url-for-now",
+    "price": 28,
+    "labels": ["Art", "Outdoor", "Baby"],
+    "createdAt": 1631048801011,
+    "inStock": true
+  },
+  {
+    "_id": "t119",
+    "name": "Battery Fire Truck",
+    "imgUrl": "hardcoded-url-for-now",
+    "price": 140,
+    "labels": ["Battery Powered", "On wheels", "Box game"],
+    "createdAt": 1631049801011,
+    "inStock": true
+  },
+  {
+    "_id": "t120",
+    "name": "Princess Doll Set",
+    "imgUrl": "hardcoded-url-for-now",
+    "price": 110,
+    "labels": ["Doll", "Baby", "Puzzle"],
+    "createdAt": 1631050801011,
+    "inStock": false
+  }
+]

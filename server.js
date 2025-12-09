@@ -3,7 +3,7 @@ import express from 'express'
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
 
-import { carService } from './services/car.service.js'
+import { toyService } from './services/toy.service.js'
 import { userService } from './services/user.service.js'
 import { loggerService } from './services/logger.service.js'
 
@@ -28,81 +28,81 @@ app.set('query parser', 'extended')
 
 // Express Routing:
 
-// REST API for Cars
-app.get('/api/car', (req, res) => {
-    console.log('/api/car')
+// REST API for toys
+app.get('/api/toy', (req, res) => {
+    console.log('/api/toy')
     const filterBy = {
         txt: req.query.txt || '',
-        minSpeed: +req.query.minSpeed || 0,
         maxPrice: +req.query.maxPrice || 0,
+        labels: req.query.labels,
+        sortBy: req.query.sortBy,
+        stock: req.query.stock,
         pageIdx: req.query.pageIdx || undefined,
     }
-    carService.query(filterBy)
-        .then(cars => res.send(cars))
+    toyService.query(filterBy)
+        .then(toys => res.send(toys))
         .catch(err => {
-            loggerService.error('Cannot get cars', err)
-            res.status(400).send('Cannot get cars')
+            loggerService.error('Cannot get toys', err)
+            res.status(400).send('Cannot get toys')
         })
 })
 
-app.get('/api/car/:carId', (req, res) => {
-    const { carId } = req.params
+app.get('/api/toy/:toyId', (req, res) => {
+    const { toyId } = req.params
 
-    carService.getById(carId)
-        .then(car => res.send(car))
+    toyService.getById(toyId)
+        .then(toy => res.send(toy))
         .catch(err => {
-            loggerService.error('Cannot get car', err)
-            res.status(400).send('Cannot get car')
+            loggerService.error('Cannot get toy', err)
+            res.status(400).send('Cannot get toy')
         })
 })
 
-app.post('/api/car', (req, res) => {
+app.post('/api/toy', (req, res) => {
     console.log('req.cookies:', req.cookies)
     const loggedinUser = userService.validateToken(req.cookies.loginToken)
     console.log('loggedinUser:', loggedinUser)
-    if (!loggedinUser) return res.status(401).send('Cannot add car')
+    if (!loggedinUser) return res.status(401).send('Cannot add toy')
 
-    const car = {
-        vendor: req.body.vendor,
-        price: +req.body.price,
-        speed: +req.body.speed,
+    const toy = {
+        name: req.body.name,
+        price: +req.body.price
     }
-    carService.save(car, loggedinUser)
-        .then(savedCar => res.send(savedCar))
+    toyService.save(toy, loggedinUser)
+        .then(savedtoy => res.send(savedtoy))
         .catch(err => {
-            loggerService.error('Cannot save car', err)
-            res.status(400).send('Cannot save car')
+            loggerService.error('Cannot save toy', err)
+            res.status(400).send('Cannot save toy')
         })
 })
 
-app.put('/api/car/:id', (req, res) => {
+app.put('/api/toy/:id', (req, res) => {
     const loggedinUser = userService.validateToken(req.cookies.loginToken)
-    if (!loggedinUser) return res.status(401).send('Cannot update car')
+    if (!loggedinUser) return res.status(401).send('Cannot update toy')
 
-    const car = {
+    const toy = {
         _id: req.params.id,
-        vendor: req.body.vendor,
+        name: req.body.name,
         price: +req.body.price,
-        speed: +req.body.speed,
     }
-    carService.save(car, loggedinUser)
-        .then(savedCar => res.send(savedCar))
+    toyService.save(toy, loggedinUser)
+        .then(savedToy => res.send(savedToy))
         .catch(err => {
-            loggerService.error('Cannot save car', err)
-            res.status(400).send('Cannot save car')
+            loggerService.error('Cannot save toy', err)
+            res.status(400).send('Cannot save toy')
         })
 })
 
-app.delete('/api/car/:carId', (req, res) => {
+app.delete('/api/toy/:toyId', (req, res) => {
     const loggedinUser = userService.validateToken(req.cookies.loginToken)
-    if (!loggedinUser) return res.status(401).send('Cannot remove car')
+    if (!loggedinUser) return res.status(401).send('Cannot remove toy')
 
-    const { carId } = req.params
-    carService.remove(carId, loggedinUser)
+    const { toyId } = req.params
+    toyService.remove(toyId, loggedinUser)
         .then(() => res.send('Removed!'))
         .catch(err => {
-            loggerService.error('Cannot remove car', err)
-            res.status(400).send('Cannot remove car')
+            loggerService.error('Cannot remove toy', err)
+            res.status(400).send('Cannot remove toy')
         })
 })
 
@@ -179,8 +179,8 @@ app.put('/api/user', (req, res) => {
     const loggedinUser = userService.validateToken(req.cookies.loginToken)
     if (!loggedinUser) return res.status(400).send('No logged in user')
     const { diff } = req.body
-    if (loggedinUser.score + diff < 0) return res.status(400).send('No credit')
-    loggedinUser.score += diff
+    if (loggedinUser.credits + diff < 0) return res.status(400).send('No credit')
+    loggedinUser.credits += diff
     return userService.save(loggedinUser)
         .then(user => {
             const token = userService.getLoginToken(user)
