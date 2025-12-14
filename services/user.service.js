@@ -11,7 +11,6 @@ export const userService = {
     getById,
     remove,
     save,
-
     checkLogin,
     getLoginToken,
     validateToken,

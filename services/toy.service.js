@@ -19,7 +19,12 @@ const gLabels = ['On wheels', 'Box game', 'Art', 'Baby', 'Doll',
 function query(filterBy = {}) {
     let filteredToys = [...toys]
     
-    let { txt, maxPrice, labels, sortBy, stock } = filterBy
+    let { txt, 
+        maxPrice, 
+        labels, 
+        sortBy, 
+        stock, 
+        user } = filterBy
     
     if (txt) {
         const regex = new RegExp(txt, 'i')
@@ -50,6 +55,8 @@ function query(filterBy = {}) {
         if (stock === 'true') filteredToys = filteredToys.filter((toy) => toy.inStock === true)
         if (stock === 'false') filteredToys = filteredToys.filter((toy) => toy.inStock === false)
     }
+
+    if (user) filteredToys = filteredToys.filter((toy) => toy.creator._id === user)
 
     // if (filterBy.pageIdx !== undefined) {
     //     const startIdx = filterBy.pageIdx * PAGE_SIZE

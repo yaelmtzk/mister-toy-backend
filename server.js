@@ -25,14 +25,10 @@ app.use(cookieParser())
 app.use(express.json())
 app.set('query parser', 'extended')
 
-
 // Express Routing:
 
 // REST API for toys
 app.get('/api/toy', (req, res) => {
-    console.log('/api/toy')
-    console.log(req.query);
-    
     const filterBy = {
         txt: req.query.txt || '',
         maxPrice: +req.query.maxPrice || '',
@@ -40,6 +36,7 @@ app.get('/api/toy', (req, res) => {
         sortBy: req.query.sortBy || '',
         stock: req.query.stock || '',
         pageIdx: req.query.pageIdx || '',
+        user: req.query.user || ''
     }
 
     toyService.query(filterBy)
@@ -123,6 +120,8 @@ app.get('/api/user', (req, res) => {
 
 app.get('/api/user/:userId', (req, res) => {
     const { userId } = req.params
+    console.log(userId);
+    
 
     userService.getById(userId)
         .then(user => res.send(user))

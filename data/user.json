@@ -11,7 +11,7 @@
     "username": "muki",
     "fullname": "Muki Ba",
     "password": "muki1",
-    "credits": 9722
+    "credits": 9599
   },
   {
     "username": "kiki",
@@ -27,5 +27,12 @@
     "credits": 5001,
     "_id": "Uo93j",
     "isAdmin": true
+  },
+  {
+    "username": "yuki",
+    "password": "yuki1",
+    "fullname": "Yuki Sa",
+    "credits": 10000,
+    "_id": "8cahW"
   }
 ]

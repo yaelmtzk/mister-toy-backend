@@ -2,14 +2,14 @@
   {
     "_id": "t101",
     "name": "Talking Doll",
-    "imgUrl": "hardcoded-url-for-now",
+    "imgUrl": "doll.jpg",
     "price": 123,
     "labels": [
       "Doll",
       "Battery Powered",
       "Baby"
     ],
-    "createdAt": 1631031801011,
+    "createdAt": 1712489035123,
     "inStock": true,
     "creator": {
       "_id": "6iykr",
@@ -20,14 +20,14 @@
   {
     "_id": "t102",
     "name": "Wooden Puzzle Board",
-    "imgUrl": "hardcoded-url-for-now",
+    "imgUrl": "puzzle.jpg",
     "price": 45,
     "labels": [
       "Puzzle",
       "Art",
       "Box game"
     ],
-    "createdAt": 1631032801011,
+    "createdAt": 1709123302988,
     "inStock": true,
     "creator": {
       "_id": "u102",
@@ -37,15 +37,15 @@
   },
   {
     "_id": "t103",
-    "name": "Racing Car",
-    "imgUrl": "hardcoded-url-for-now",
+    "name": "Eletric Car",
+    "imgUrl": "car.jpg",
     "price": 89,
     "labels": [
       "On wheels",
       "Outdoor",
       "Battery Powered"
     ],
-    "createdAt": 1631033801011,
+    "createdAt": 1705038890233,
     "inStock": false,
     "creator": {
       "_id": "u101",
@@ -56,14 +56,14 @@
   {
     "_id": "t104",
     "name": "Baby Rattle",
-    "imgUrl": "hardcoded-url-for-now",
+    "imgUrl": "rattle.jpg",
     "price": 25,
     "labels": [
       "Baby",
       "Art",
       "Doll"
     ],
-    "createdAt": 1631034801011,
+    "createdAt": 1699934301299,
     "inStock": true,
     "creator": {
       "_id": "6iykr",
@@ -74,14 +74,14 @@
   {
     "_id": "t105",
     "name": "Garden Play Set",
-    "imgUrl": "hardcoded-url-for-now",
+    "imgUrl": "garden.png",
     "price": 150,
     "labels": [
       "Outdoor",
       "Box game",
       "Baby"
     ],
-    "createdAt": 1631035801011,
+    "createdAt": 1716377700344,
     "inStock": true,
     "creator": {
       "_id": "u102",
@@ -92,14 +92,14 @@
   {
     "_id": "t106",
     "name": "Electric Train",
-    "imgUrl": "hardcoded-url-for-now",
+    "imgUrl": "train.jpg",
     "price": 199,
     "labels": [
       "On wheels",
       "Battery Powered",
       "Puzzle"
     ],
-    "createdAt": 1631036801011,
+    "createdAt": 1701334099887,
     "inStock": false,
     "creator": {
       "_id": "u101",
@@ -110,14 +110,14 @@
   {
     "_id": "t107",
     "name": "Creative Art Kit",
-    "imgUrl": "hardcoded-url-for-now",
+    "imgUrl": "art.jpg",
     "price": 60,
     "labels": [
       "Art",
       "Box game",
       "Puzzle"
     ],
-    "createdAt": 1631037801011,
+    "createdAt": 1718935545012,
     "inStock": true,
     "creator": {
       "_id": "u102",
@@ -128,14 +128,14 @@
   {
     "_id": "t108",
     "name": "Outdoor Ball Set",
-    "imgUrl": "hardcoded-url-for-now",
+    "imgUrl": "ball.jpg",
     "price": 55,
     "labels": [
       "Outdoor",
       "Baby",
       "Box game"
     ],
-    "createdAt": 1631038801011,
+    "createdAt": 1707214456999,
     "inStock": true,
     "creator": {
       "_id": "6iykr",
@@ -146,14 +146,14 @@
   {
     "_id": "t109",
     "name": "Battery Robot",
-    "imgUrl": "hardcoded-url-for-now",
+    "imgUrl": "robot.jpg",
     "price": 135,
     "labels": [
       "Battery Powered",
       "Puzzle",
       "On wheels"
     ],
-    "createdAt": 1631039801011,
+    "createdAt": 1698459332811,
     "inStock": true,
     "creator": {
       "_id": "u101",
@@ -164,14 +164,14 @@
   {
     "_id": "t110",
     "name": "Plush Doll",
-    "imgUrl": "hardcoded-url-for-now",
+    "imgUrl": "doll.jpg",
     "price": 70,
     "labels": [
       "Doll",
       "Baby",
       "Art"
     ],
-    "createdAt": 1631040801011,
+    "createdAt": 1710309332001,
     "inStock": false,
     "creator": {
       "_id": "u102",
@@ -181,15 +181,15 @@
   },
   {
     "_id": "t111",
-    "name": "Outdoor Explorer Kit",
-    "imgUrl": "hardcoded-url-for-now",
+    "name": "Magic Garden",
+    "imgUrl": "garden.jpg",
     "price": 90,
     "labels": [
       "Outdoor",
       "Puzzle",
       "Box game"
     ],
-    "createdAt": 1631041801011,
+    "createdAt": 1702543995112,
     "inStock": true,
     "creator": {
       "_id": "6iykr",
@@ -200,14 +200,14 @@
   {
     "_id": "t112",
     "name": "Coloring Station",
-    "imgUrl": "hardcoded-url-for-now",
+    "imgUrl": "art.jpg",
     "price": 35,
     "labels": [
       "Art",
       "Baby",
       "Box game"
     ],
-    "createdAt": 1631042801011,
+    "createdAt": 1714712337888,
     "inStock": true,
     "creator": {
       "_id": "u101",
@@ -218,14 +218,14 @@
   {
     "_id": "t113",
     "name": "Battery Helicopter",
-    "imgUrl": "hardcoded-url-for-now",
+    "imgUrl": "helicopter.jpg",
     "price": 160,
     "labels": [
       "Battery Powered",
       "On wheels",
       "Outdoor"
     ],
-    "createdAt": 1631043801011,
+    "createdAt": 1705558223111,
     "inStock": false,
     "creator": {
       "_id": "u102",
@@ -236,14 +236,14 @@
   {
     "_id": "t114",
     "name": "Doll House",
-    "imgUrl": "hardcoded-url-for-now",
+    "imgUrl": "house.jpg",
     "price": 220,
     "labels": [
       "Doll",
       "Box game",
       "Art"
     ],
-    "createdAt": 1631044801011,
+    "createdAt": 1697134900123,
     "inStock": true,
     "creator": {
       "_id": "6iykr",
@@ -254,14 +254,14 @@
   {
     "_id": "t115",
     "name": "Baby Soft Blocks",
-    "imgUrl": "hardcoded-url-for-now",
+    "imgUrl": "blocks.jpg",
     "price": 40,
     "labels": [
       "Baby",
       "Puzzle",
       "Art"
     ],
-    "createdAt": 1631045801011,
+    "createdAt": 1713512288004,
     "inStock": true,
     "creator": {
       "_id": "u101",
@@ -272,14 +272,14 @@
   {
     "_id": "t116",
     "name": "Super Fast Kart",
-    "imgUrl": "hardcoded-url-for-now",
+    "imgUrl": "car.jpg",
     "price": 180,
     "labels": [
       "On wheels",
       "Battery Powered",
       "Outdoor"
     ],
-    "createdAt": 1631046801011,
+    "createdAt": 1706137744555,
     "inStock": false,
     "creator": {
       "_id": "u102",
@@ -290,14 +290,14 @@
   {
     "_id": "t117",
     "name": "Puzzle Cube",
-    "imgUrl": "hardcoded-url-for-now",
+    "imgUrl": "puzzle.jpg",
     "price": 30,
     "labels": [
       "Puzzle",
       "Box game",
       "Art"
     ],
-    "createdAt": 1631047801011,
+    "createdAt": 1719988323981,
     "inStock": true,
     "creator": {
       "_id": "6iykr",
@@ -307,15 +307,15 @@
   },
   {
     "_id": "t119",
-    "name": "Battery Fire Truck",
-    "imgUrl": "hardcoded-url-for-now",
+    "name": "Racing Car",
+    "imgUrl": "car.jpg",
     "price": 141,
     "labels": [
       "Battery Powered",
       "On wheels",
       "Box game"
     ],
-    "createdAt": 1631049801011,
+    "createdAt": 1699065557990,
     "inStock": true,
     "creator": {
       "_id": "u102",
@@ -326,19 +326,37 @@
   {
     "_id": "t120",
     "name": "Princess Doll Set",
-    "imgUrl": "hardcoded-url-for-now",
+    "imgUrl": "doll.jpg",
     "price": 110,
     "labels": [
       "Doll",
       "Baby",
       "Puzzle"
     ],
-    "createdAt": 1631050801011,
+    "createdAt": 1704439112344,
     "inStock": false,
     "creator": {
       "_id": "6iykr",
       "fullname": "Kiki Ki",
       "credits": 4327
     }
+  },
+  {
+    "name": "Rainbow Hero",
+    "price": 88,
+    "_id": "C3B8l",
+    "creator": {
+      "_id": "8cahW",
+      "fullname": "Yuki Sa",
+      "credits": 10000
+    },
+    "imgUrl": "rainbow.jpg",
+    "inStock": true,
+    "createdAt": 1765486834904,
+    "labels": [
+      "Box game",
+      "Puzzle",
+      "Battery Powered"
+    ]
   }
 ]
