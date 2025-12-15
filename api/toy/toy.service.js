@@ -12,11 +12,14 @@ export const toyService = {
 	update,
 	remove,
 	addtoyMsg,
-	removetoyMsg,
+	removetoyMsg
 }
 
+const labels = ['On wheels', 'Box game', 'Art', 'Baby', 'Doll',
+	'Puzzle', 'Outdoor', 'Battery Powered']
+
 async function query(filterBy = { txt: '' }) {
-	
+
 	try {
 		const criteria = {}
 
@@ -47,7 +50,7 @@ async function query(filterBy = { txt: '' }) {
 		if (filterBy.sortBy === 'txt') sort.name = 1
 
 		const collection = await dbService.getCollection('toy')
-		var toys = await collection.find(criteria).sort(sort).toArray()	
+		var toys = await collection.find(criteria).sort(sort).toArray()
 
 		return toys
 
@@ -80,8 +83,14 @@ async function remove(toyId) {
 	}
 }
 
-async function add(toy) {
+async function add(toy, user) {
 	try {
+		toy.imgUrl = 'toy.jpg'
+		toy.inStock = true
+		toy.createdAt = Date.now()
+		toy.creator = user
+		toy.labels = _getRandLabels(toy.name)
+
 		const collection = await dbService.getCollection('toy')
 		await collection.insertOne(toy)
 		return toy
@@ -128,4 +137,18 @@ async function removetoyMsg(toyId, msgId) {
 		loggerService.error(`cannot add toy msg ${toyId}`, err)
 		throw err
 	}
+}
+
+function _getRandLabels(name) {
+	const res = new Set()
+	const match = labels.find(lbl =>
+		lbl.toLowerCase().includes(name.toLowerCase())
+	)
+	if (match) res.add(match)
+
+	while (res.size < 3) {
+		const randomLabel = labels[utilService.getRandomIntInclusive(0, labels.length - 1)]
+		res.add(randomLabel)
+	}
+	return [...res]
 }

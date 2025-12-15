@@ -1,5 +1,6 @@
 import { toyService } from './toy.service.js'
 import { loggerService } from '../../services/logger.service.js'
+import { log } from '../../middlewares/logger.middleware.js'
 
 export async function getToys(req, res) {
     try {
@@ -33,12 +34,17 @@ export async function getToyById(req, res) {
 }
 
 export async function addToy(req, res) {
-    const { loggedinUser } = req
-
     try {
         const toy = req.body
-        toy.creator = loggedinUser
-        const addedToy = await toyService.add(toy)
+
+        const loggedinUser =
+        {
+            _id: req.loggedinUser._id,
+            fullname: req.loggedinUser.fullname,
+            credits: req.loggedinUser.credits
+        }
+
+        const addedToy = await toyService.add(toy, loggedinUser)
         res.json(addedToy)
     } catch (err) {
         loggerService.error('Failed to add toy', err)
